@@ -1,4 +1,7 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import {AppRegistry} from 'react-native';
+import MainAppButton from './src/MainAppButton';
 
-AppRegistry.registerComponent('workshopReactNative', () => App);
+AppRegistry.registerComponent(
+  'workshopReactNative',
+  () => MainAppButton,
+);
