@@ -1,4 +1,7 @@
-import { AppRegistry } from 'react-native';
-import App from './App';
+import {AppRegistry} from 'react-native';
+import LoadingImage from './src/LoadingImage';
 
-AppRegistry.registerComponent('workshopReactNative', () => App);
+AppRegistry.registerComponent(
+  'workshopReactNative',
+  () => LoadingImage,
+);
