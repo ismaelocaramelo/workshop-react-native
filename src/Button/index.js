@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import { Text, TouchableOpacity, View } from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 
-import Base, { Default, Danger, Info, Success } from './styles';
+import Base, {Default, Danger, Info, Success} from './styles';
 
-const { array, string, object, bool, func, any } = PropTypes;
+const {bool, func, any} = PropTypes;
 
 class Button extends PureComponent {
   static propTypes = {
@@ -12,11 +12,12 @@ class Button extends PureComponent {
     danger: bool,
     info: bool,
     success: bool,
-    onPress: func
+    onPress: func,
+    rounded: bool,
   };
 
   getTheme() {
-    const { danger, info, success } = this.props;
+    const {danger, info, success} = this.props;
 
     if (info) {
       return Info;
@@ -33,11 +34,16 @@ class Button extends PureComponent {
 
   render() {
     const theme = this.getTheme();
-    const { children, onPress, style, rounded } = this.props;
+    const {children, onPress, style, rounded} = this.props;
     return (
       <TouchableOpacity
         activeOpacity={0.2}
-        style={[Base.main, theme.main, rounded ? Base.rounded : null, style]}
+        style={[
+          Base.main,
+          theme.main,
+          rounded ? Base.rounded : null,
+          style,
+        ]}
         onPress={onPress}
       >
         <Text style={[Base.label, theme.label]}>{children}</Text>
